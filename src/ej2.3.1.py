@@ -8,12 +8,13 @@ def validar_edad(edad: int):
         raise ValueError("La edad no puede ser superior a 125")
     
 def pedir_edad() -> int:
+    edad_correcta = False
     edad = None
 
-    while edad == None:
+    while not edad_correcta == None:
         try: 
             edad = int(input("Introduzca su edad: "))
-            
+            validar_edad(edad)
         except ValueError as e:
             if edad is None:
                 print(f"El numero introducido no es valido. Intentalo de nuevo")
